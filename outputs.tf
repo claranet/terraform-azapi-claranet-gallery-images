@@ -16,16 +16,16 @@ output "images_versions" {
 }
 
 output "claranet_ubuntu" {
-  value       = local.claranet_ubuntu_versions
+  value       = local.image_versions["ubuntu"]
   description = "Claranet's Ubuntu golden images versions"
 }
 
 output "claranet_debian" {
-  value       = local.claranet_debian_versions
+  value       = local.image_versions["debian"]
   description = "Claranet's Debian golden images versions"
 }
 
 output "claranet_windows_datacenter" {
-  value       = local.claranet_windows_datacenter_versions
+  value       = local.image_versions["windows"]
   description = "Claranet's Windows golden images versions"
 }
