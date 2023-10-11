@@ -7,3 +7,7 @@ terraform {
     }
   }
 }
+
+provider "azapi" {
+  subscription_id = var.azure_subscription_id
+}
