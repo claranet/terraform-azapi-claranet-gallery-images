@@ -111,6 +111,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| claranet\_debian | Claranet's Debian golden images versions |
+| claranet\_ubuntu | Claranet's Ubuntu golden images versions |
+| claranet\_windows\_datacenter | Claranet's Windows golden images versions |
 | images\_names\_list | List of images definitions names |
 | images\_versions | List of images versions for each image definition |
 <!-- END_TF_DOCS -->
