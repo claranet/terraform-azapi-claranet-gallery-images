@@ -86,54 +86,33 @@ module "claranet_gallery_images" {
 
 | Name | Version |
 |------|---------|
-| azapi | n/a |
-| azurecaf | ~> 1.2, >= 1.2.22 |
+| azapi | ~> 1.0 |
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| diagnostics | claranet/diagnostic-settings/azurerm | n/a |
+No modules.
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [azapi_resource_list.claranet_gallery_images](https://registry.terraform.io/providers/hashicorp/azapi/latest/docs/resources/resource_list) | resource |
-| [azurecaf_name.claranet_gallery_images](https://registry.terraform.io/providers/aztfmod/azurecaf/latest/docs/data-sources/name) | data source |
+| [azapi_resource_list.image](https://registry.terraform.io/providers/Azure/azapi/latest/docs/data-sources/resource_list) | data source |
+| [azapi_resource_list.version](https://registry.terraform.io/providers/Azure/azapi/latest/docs/data-sources/resource_list) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| allowed\_cidrs | List of allowed CIDR ranges to access the Claranet Gallery Images resource. | `list(string)` | `[]` | no |
-| allowed\_subnet\_ids | List of allowed subnets IDs to access the Claranet Gallery Images resource. | `list(string)` | `[]` | no |
-| client\_name | Client name/account used in naming. | `string` | n/a | yes |
-| custom\_diagnostic\_settings\_name | Custom name of the diagnostics settings, name will be 'default' if not set. | `string` | `"default"` | no |
-| custom\_name | Custom Claranet Gallery Images, generated if not set | `string` | `""` | no |
-| default\_tags\_enabled | Option to enable or disable default tags. | `bool` | `true` | no |
-| environment | Project environment. | `string` | n/a | yes |
-| extra\_tags | Additional tags to add on resources. | `map(string)` | `{}` | no |
-| location | Azure region to use. | `string` | n/a | yes |
-| location\_short | Short string for Azure location. | `string` | n/a | yes |
-| logs\_categories | Log categories to send to destinations. | `list(string)` | `null` | no |
-| logs\_destinations\_ids | List of destination resources IDs for logs diagnostic destination.<br>Can be `Storage Account`, `Log Analytics Workspace` and `Event Hub`. No more than one of each can be set.<br>If you want to specify an Azure EventHub to send logs and metrics to, you need to provide a formated string with both the EventHub Namespace authorization send ID and the EventHub name (name of the queue to use in the Namespace) separated by the `|` character. | `list(string)` | n/a | yes |
-| logs\_metrics\_categories | Metrics categories to send to destinations. | `list(string)` | `null` | no |
-| name\_prefix | Optional prefix for the generated name | `string` | `""` | no |
-| name\_suffix | Optional suffix for the generated name | `string` | `""` | no |
-| network\_bypass | Specify whether traffic is bypassed for 'Logging', 'Metrics', 'AzureServices' or 'None'. | `list(string)` | <pre>[<br>  "Logging",<br>  "Metrics",<br>  "AzureServices"<br>]</pre> | no |
-| public\_network\_access\_enabled | Whether the Claranet Gallery Images is available from public network. | `bool` | `false` | no |
-| resource\_group\_name | Name of the resource group. | `string` | n/a | yes |
-| stack | Project stack name. | `string` | n/a | yes |
+| azure\_subscription\_id | Azure subscription ID. | `string` | n/a | yes |
+| gallery\_name | Name of the gallery to check. Default to Claranet's community gallery. | `string` | `"claranet-890239a9-edcc-42b3-82c2-de32ab229874"` | no |
+| location\_cli | Location as Azure CLI format. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| claranet\_gallery\_images | Claranet Gallery Images output object |
-| id | Claranet Gallery Images ID |
-| identity\_principal\_id | Claranet Gallery Images system identity principal ID |
-| name | Claranet Gallery Images name |
+| images\_names\_list | List of images definitions names |
+| images\_versions | List of images versions for each image definition |
 <!-- END_TF_DOCS -->
 
 ## Related documentation

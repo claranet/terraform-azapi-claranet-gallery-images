@@ -1,8 +1,12 @@
-resource "azapi_resource_list" "claranet_gallery_images" {
-  name = local.claranet_gallery_images_name
+data "azapi_resource_list" "image" {
+  type                   = "Microsoft.Compute/locations/communityGalleries/images@2023-07-01"
+  parent_id              = "/subscriptions/${var.azure_subscription_id}/providers/Microsoft.Compute/locations/${var.location_cli}/communityGalleries/${var.gallery_name}"
+  response_export_values = ["*"]
+}
 
-  location            = var.location
-  resource_group_name = var.resource_group_name
-
-  tags = merge(local.default_tags, var.extra_tags)
+data "azapi_resource_list" "version" {
+  for_each               = toset(jsondecode(data.azapi_resource_list.image.output).value[*].name)
+  type                   = "Microsoft.Compute/locations/communityGalleries/images/versions@2023-07-01"
+  parent_id              = "/subscriptions/${var.azure_subscription_id}/providers/Microsoft.Compute/locations/${var.location_cli}/communityGalleries/${var.gallery_name}/images/${each.value}"
+  response_export_values = ["*"]
 }

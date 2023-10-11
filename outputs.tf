@@ -1,19 +1,16 @@
-output "claranet_gallery_images" {
-  description = "Claranet Gallery Images output object"
-  value       = azapi_resource_list.claranet_gallery_images
+output "images_names_list" {
+  value       = flatten([keys(data.azapi_resource_list.version)])
+  description = "List of images definitions names"
 }
 
-output "id" {
-  description = "Claranet Gallery Images ID"
-  value       = azapi_resource_list.claranet_gallery_images.id
-}
-
-output "name" {
-  description = "Claranet Gallery Images name"
-  value       = azapi_resource_list.claranet_gallery_images.name
-}
-
-output "identity_principal_id" {
-  description = "Claranet Gallery Images system identity principal ID"
-  value       = try(azapi_resource_list.claranet_gallery_images.identity[0].principal_id, null)
+output "images_versions" {
+  value = { for img, val in data.azapi_resource_list.version : img =>
+    merge({
+      for v in jsondecode(val.output).value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries")
+      },
+      {
+        latest = format("/communityGalleries/${var.gallery_name}/images/%s/versions/latest", img)
+    })
+  }
+  description = "List of images versions for each image definition"
 }
