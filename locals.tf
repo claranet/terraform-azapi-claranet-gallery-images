@@ -18,7 +18,7 @@ locals {
       merge(
         { for v in jsondecode(data.azapi_resource_list.version[img].output).value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries") },
         {
-          latest = format("/communityGalleries/${var.gallery_name}/images/%s/versions/latest", img)
+          latest = format("/communityGalleries/%s/images/%s/versions/latest", var.gallery_name, img)
         }
       )
     }
