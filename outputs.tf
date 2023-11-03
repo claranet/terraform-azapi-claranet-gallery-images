@@ -4,7 +4,7 @@ output "images_names_list" {
 }
 
 output "images_versions" {
-  value = local.image_versions
+  value       = local.image_versions
   description = "List of images versions for each image definition"
 }
 
