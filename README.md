@@ -183,12 +183,12 @@ module "vm" {
   # or use Availability Zone
   # zone_id = 1
 
-  vm_image_id = module.images.claranet_ubuntu["22.04"].latest
+  vm_image_id = module.claranet_gallery_images.claranet_ubuntu["22.04"].latest
 
 
 }
 
-module "vm-gen1" {
+module "vm_gen1" {
   source  = "claranet/linux-vm/azurerm"
   version = "x.x.x"
 
@@ -218,7 +218,7 @@ module "vm-gen1" {
   # or use Availability Zone
   # zone_id = 1
 
-  vm_image_id = module.images.claranet_ubuntu["22.04"].gen1.latest
+  vm_image_id = module.claranet_gallery_images.claranet_ubuntu["22.04"].gen1.latest
 
 
 }
