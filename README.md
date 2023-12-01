@@ -3,6 +3,12 @@
 
 Azure module list Claranet images and their versions by OS name.
 
+## Available OS versions
+
+* claranet_windows_datacenter: 2019, 2022
+* claranet_ubuntu: 20.04, 22.04
+* claranet_debian: 11, 12
+
 <!-- BEGIN_TF_DOCS -->
 ## Global versioning rule for Claranet Azure modules
 
