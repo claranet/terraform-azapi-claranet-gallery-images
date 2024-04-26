@@ -234,7 +234,7 @@ module "vm_gen1" {
 
 | Name | Version |
 |------|---------|
-| azapi | ~> 1.0 |
+| azapi | ~> 1.0, < 1.13 |
 
 ## Modules
 
