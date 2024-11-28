@@ -12,19 +12,19 @@ locals {
     for name, images in local.image_names :
     name => { for img in images : replace(reverse(split("-", img))[0], "_", ".") =>
       merge(
-        { for v in jsondecode(data.azapi_resource_list.version[img].output).value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries") },
+        { for v in data.azapi_resource_list.version[img].output.value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries") },
         {
           latest = format("/communityGalleries/%s/images/%s/versions/latest", var.gallery_name, img)
         },
         {
           gen1 = merge(
-            { for v in jsondecode(data.azapi_resource_list.version[replace(img, "-gen2", "")].output).value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries") },
+            { for v in data.azapi_resource_list.version[replace(img, "-gen2", "")].output.value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries") },
             { latest = format("/communityGalleries/%s/images/%s/versions/latest", var.gallery_name, replace(img, "-gen2", "")) }
           )
         },
         {
           gen2 = merge(
-            { for v in jsondecode(data.azapi_resource_list.version[img].output).value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries") },
+            { for v in data.azapi_resource_list.version[img].output.value : v.name => replace(lower(v.identifier.uniqueId), "communitygalleries", "communityGalleries") },
             { latest = format("/communityGalleries/%s/images/%s/versions/latest", var.gallery_name, img) }
           )
         }
