@@ -17,7 +17,7 @@ module "vm" {
   stack               = var.stack
   resource_group_name = module.rg.name
 
-  subnet = module.subnet
+  subnet         = module.subnet
   vm_size        = "Standard_B2s"
   admin_username = var.vm_administrator_login
   ssh_public_key = var.ssh_public_key
@@ -52,7 +52,7 @@ module "vm_gen1" {
   stack               = var.stack
   resource_group_name = module.rg.name
 
-  subnet = module.subnet
+  subnet         = module.subnet
   vm_size        = "Standard_B2s"
   admin_username = var.vm_administrator_login
   ssh_public_key = var.ssh_public_key
