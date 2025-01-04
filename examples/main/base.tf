@@ -95,7 +95,7 @@ module "run" {
   update_center_enabled       = true
 
   update_center_periodic_assessment_enabled = true
-  update_center_periodic_assessment_scopes  = [module.rg.resource_group_id]
+  update_center_periodic_assessment_scopes  = [module.rg.id]
   update_center_maintenance_configurations = [
     {
       configuration_name = "Donald"
