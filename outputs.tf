@@ -1,24 +1,24 @@
 output "images_names_list" {
+  description = "List of images definitions names."
   value       = flatten([keys(data.azapi_resource_list.version)])
-  description = "List of images definitions names"
 }
 
 output "images_versions" {
+  description = "List of images versions for each image definition."
   value       = local.image_versions
-  description = "List of images versions for each image definition"
 }
 
 output "claranet_ubuntu" {
+  description = "Claranet's Ubuntu golden images versions."
   value       = local.image_versions["ubuntu"]
-  description = "Claranet's Ubuntu golden images versions"
 }
 
 output "claranet_debian" {
+  description = "Claranet's Debian golden images versions."
   value       = local.image_versions["debian"]
-  description = "Claranet's Debian golden images versions"
 }
 
 output "claranet_windows_datacenter" {
+  description = "Claranet's Windows golden images versions."
   value       = local.image_versions["windows"]
-  description = "Claranet's Windows golden images versions"
 }
