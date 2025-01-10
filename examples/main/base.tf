@@ -71,7 +71,7 @@ module "route_table" {
   resource_group_name = module.rg.name
 }
 
-resource "azurerm_availability_set" "vm_avset" {
+resource "azurerm_availability_set" "main" {
   name                = "${var.stack}-${var.client_name}-${module.azure_region.location_short}-${var.environment}-as"
   location            = module.azure_region.location
   resource_group_name = module.rg.name
