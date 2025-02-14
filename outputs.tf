@@ -10,15 +10,15 @@ output "images_versions" {
 
 output "claranet_ubuntu" {
   description = "Claranet's Ubuntu golden images versions."
-  value       = local.image_versions["ubuntu"]
+  value       = module.deepmerge_ubuntu.merged
 }
 
 output "claranet_debian" {
   description = "Claranet's Debian golden images versions."
-  value       = local.image_versions["debian"]
+  value       = module.deepmerge_debian.merged
 }
 
 output "claranet_windows_datacenter" {
   description = "Claranet's Windows golden images versions."
-  value       = local.image_versions["windows"]
+  value       = module.deepmerge_windows.merged
 }
