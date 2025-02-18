@@ -1,3 +1,21 @@
+## 8.1.0 (2025-02-18)
+
+### Features
+
+* **AZ-1496:** add new secureboot images f20ad07
+
+### Miscellaneous Chores
+
+* apply suggestion 0a30a5d
+* **deps:** update dependency pre-commit to v4.1.0 1ba5978
+* **deps:** update dependency tflint to v0.55.0 461878d
+* **deps:** update dependency trivy to v0.58.2 e493b47
+* **deps:** update dependency trivy to v0.59.1 7d00107
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.21.0 f61bd65
+* **deps:** update tools 5a4933c
+* update Github templates 0c03bb9
+* update tflint config for v0.55.0 b55639a
+
 ## 8.0.0 (2025-01-10)
 
 ### ⚠ BREAKING CHANGES
