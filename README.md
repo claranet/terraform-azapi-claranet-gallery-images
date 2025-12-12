@@ -128,9 +128,9 @@ module "vm_gen1" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| deepmerge\_debian | Invicton-Labs/deepmerge/null | 0.1.5 |
-| deepmerge\_ubuntu | Invicton-Labs/deepmerge/null | 0.1.5 |
-| deepmerge\_windows | Invicton-Labs/deepmerge/null | 0.1.5 |
+| deepmerge\_debian | Invicton-Labs/deepmerge/null | 0.1.6 |
+| deepmerge\_ubuntu | Invicton-Labs/deepmerge/null | 0.1.6 |
+| deepmerge\_windows | Invicton-Labs/deepmerge/null | 0.1.6 |
 
 ## Resources
 
