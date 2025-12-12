@@ -1,6 +1,6 @@
 module "deepmerge_debian" {
   source  = "Invicton-Labs/deepmerge/null"
-  version = "0.1.5"
+  version = "0.1.6"
 
   maps = [
     local.image_versions["debian"],
@@ -10,7 +10,7 @@ module "deepmerge_debian" {
 
 module "deepmerge_ubuntu" {
   source  = "Invicton-Labs/deepmerge/null"
-  version = "0.1.5"
+  version = "0.1.6"
 
   maps = [
     local.image_versions["ubuntu"],
@@ -20,7 +20,7 @@ module "deepmerge_ubuntu" {
 
 module "deepmerge_windows" {
   source  = "Invicton-Labs/deepmerge/null"
-  version = "0.1.5"
+  version = "0.1.6"
 
   maps = [
     local.image_versions["windows"],
