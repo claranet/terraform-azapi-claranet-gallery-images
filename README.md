@@ -121,13 +121,13 @@ module "vm_gen1" {
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | azapi | ~> 2.0 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | deepmerge\_debian | Invicton-Labs/deepmerge/null | 0.1.6 |
 | deepmerge\_ubuntu | Invicton-Labs/deepmerge/null | 0.1.6 |
 | deepmerge\_windows | Invicton-Labs/deepmerge/null | 0.1.6 |
@@ -135,14 +135,14 @@ module "vm_gen1" {
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [azapi_resource_list.image](https://registry.terraform.io/providers/azure/azapi/latest/docs/data-sources/resource_list) | data source |
 | [azapi_resource_list.version](https://registry.terraform.io/providers/azure/azapi/latest/docs/data-sources/resource_list) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | azure\_subscription\_id | Azure subscription ID. | `string` | n/a | yes |
 | gallery\_name | Name of the gallery to check. Default to Claranet's community gallery. | `string` | `"claranet-890239a9-edcc-42b3-82c2-de32ab229874"` | no |
 | location\_cli | Location as Azure CLI format. | `string` | n/a | yes |
@@ -150,7 +150,7 @@ module "vm_gen1" {
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | claranet\_debian | Claranet's Debian golden images versions. |
 | claranet\_ubuntu | Claranet's Ubuntu golden images versions. |
 | claranet\_windows\_datacenter | Claranet's Windows golden images versions. |
